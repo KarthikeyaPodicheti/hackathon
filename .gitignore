@@ -1,0 +1,30 @@
+# Android / Gradle
+*.iml
+.gradle/
+local.properties
+.idea/
+build/
+captures/
+.externalNativeBuild/
+.cxx/
+*.apk
+*.aab
+*.ap_
+*.dex
+*.class
+
+# Models — large binaries, download at build time
+*.task
+*.tflite
+*.onnx
+models/
+
+# Secrets — never commit
+.env
+*.keystore
+*.jks
+keystore.properties
+
+# OS
+.DS_Store
+Thumbs.db
