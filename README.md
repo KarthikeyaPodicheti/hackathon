@@ -99,6 +99,23 @@ I want to be precise about the limits, because I think overclaiming here would b
 - It does not accuse a person of being a criminal. It reports that a conversation matches a known scam pattern, and it shows its evidence so the user can judge for themselves.
 - It is English-only at this stage. Hinglish and regional languages are the obvious next step and the genuinely hard part.
 
+## Proof of concept
+
+Before the event I built a desktop spike to prove the detection logic works, and
+to find out where it breaks. It lives in a separate repository, clearly marked as
+pre-event work:
+
+**github.com/KarthikeyaPodicheti/scam-shield-poc**
+
+It carries 13 deterministic detectors, a risk scorer with evidence spans, a library
+of scam scripts, an ASR noise simulator, and a browser prototype. The Android app in
+*this* repository is written during the event window, from scratch.
+
+The spike is why I know two things I would otherwise have discovered on stage: that
+acronym detection shatters when speech recognition renders "OTP" as "oh tee pee",
+and that approving a UPI collect request sends money out rather than receiving it —
+which is what actually makes the "wrong transfer" story a scam.
+
 ## The one sentence
 
 > My phone caught the scam while they were still talking — and it couldn't have leaked the call if it tried.
